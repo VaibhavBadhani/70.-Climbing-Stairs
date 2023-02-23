@@ -1,0 +1,15 @@
+class Solution {
+    public int climbStairs(int n) 
+    {
+        int []mem = new int [n+1];
+        int as= rec(n,mem);
+        return as;
+    }
+    private static int rec(int n , int mem[])
+    {
+        if(n<=1)return 1;
+        if(mem[n]>0)return mem[n];
+        mem[n]=rec(n-1,mem)+rec(n-2,mem);
+        return rec(n-1,mem)+rec(n-2,mem);
+    }
+}
